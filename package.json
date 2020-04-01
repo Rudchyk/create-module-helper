@@ -1,0 +1,44 @@
+{
+  "name": "create-module-helper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create": "node ./scripts/create"
+  },
+  "createModule": {
+    "default": {
+      "extention": "vue",
+      "folder": "components"
+    },
+    "associations": {
+      "vue": {
+        "titleCase": true,
+        "folders": [
+          "components",
+          "layouts",
+          "pages"
+        ]
+      },
+      "sass": {
+        "folders": [
+          "assets"
+        ]
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rudchyk/create-module-helper.git"
+  },
+  "author": "s.rudchyk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rudchyk/create-module-helper/issues"
+  },
+  "homepage": "https://github.com/Rudchyk/create-module-helper#readme",
+  "devDependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
