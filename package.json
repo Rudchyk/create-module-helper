@@ -2,11 +2,11 @@
   "name": "create-module-helper",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "scripts/create-module-helper/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "create": "node ./scripts/create",
-    "create:sass": "node ./scripts/create tpl=sass"
+    "create": "node ./scripts/create-module-helper",
+    "create:sass": "node ./scripts/create-module-helper tpl=sass"
   },
   "createModule": {
     "default": {
