@@ -1,0 +1,40 @@
+{
+    "default": {
+        "tpl": "vue"
+    },
+    "tpls": {
+        "vue": {
+            "titleCase": true,
+            "default": "components",
+            "folders": [
+                "layouts",
+                "pages"
+            ],
+            "msg": "import {name} from '~/{dir}/{name}.vue"
+        },
+        "sass": {
+            "default": "assets",
+            "msg": "@import \"{dir}/{name}\";"
+        },
+        "js": {
+            "default": "utils",
+            "msg": "import {name} from '~/{dir}/{name}.js"
+        }
+    },
+    "tplsFolder": "tpls",
+    "associations": {
+        "name": [
+            "name",
+            "n"
+        ],
+        "dir": [
+            "directory",
+            "dir",
+            "d"
+        ],
+        "tpl": [
+            "t",
+            "tpl"
+        ]
+    }
+}

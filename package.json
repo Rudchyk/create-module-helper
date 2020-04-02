@@ -5,26 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "create": "node ./scripts/create"
+    "create": "node ./scripts/create",
+    "create:sass": "node ./scripts/create tpl=sass"
   },
   "createModule": {
     "default": {
-      "extention": "vue",
-      "folder": "components"
+      "tpl": "vue"
     },
-    "associations": {
+    "tpls": {
       "vue": {
         "titleCase": true,
+        "default": "components",
         "folders": [
-          "components",
           "layouts",
           "pages"
         ]
       },
       "sass": {
-        "folders": [
-          "assets"
-        ]
+        "default": "assets"
       }
     }
   },
