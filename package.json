@@ -3,9 +3,12 @@
   "version": "1.0.2",
   "description": "The module to automatically create components for your project",
   "main": "index.js",
+  "testDir": "test",
   "scripts": {
     "start": "node ./index.js",
-    "dev": "gulp"
+    "dev": "gulp",
+    "test:i": "mkdir %npm_package_testDir% && cd %npm_package_testDir% && npm init && npm i create-module-helper",
+    "test:rm": "rm -rf %npm_package_testDir%"
   },
   "repository": {
     "type": "git",
