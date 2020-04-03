@@ -1,7 +1,7 @@
 {
   "name": "create-module-helper",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "The module to automatically create components for your project",
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js"
@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/Rudchyk/create-module-helper/issues"
   },
-  "homepage": "https://github.com/Rudchyk/create-module-helper#readme",
+  "homepage": "https://www.npmjs.com/package/create-module-helper",
   "dependencies": {
     "readline-sync": "^1.4.10"
   }
