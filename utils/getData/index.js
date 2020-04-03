@@ -1,9 +1,9 @@
 const path = require('path');
 const packagePath = path.resolve('.', 'package.json');
 const packageData = require(packagePath);
-const defaultData = require("../context/default.json");
+const defaultData = require("../../context/default.json");
 const deepMerge = require("../deep-merge");
-const options = deepMerge(defaultData, packageData.createModule);
+const options = deepMerge(defaultData, (packageData.createModule || {}));
 const tpls = options.tpls || {};
 const data = require("../getArgs")(options.associations);
 data.tpl = require("./getTpl")({

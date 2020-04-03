@@ -2,29 +2,9 @@
   "name": "create-module-helper",
   "version": "1.0.0",
   "description": "",
-  "main": "scripts/create-module-helper/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "create": "node ./scripts/create-module-helper",
-    "create:sass": "node ./scripts/create-module-helper tpl=sass"
-  },
-  "createModule": {
-    "default": {
-      "tpl": "vue"
-    },
-    "tpls": {
-      "vue": {
-        "titleCase": true,
-        "default": "components",
-        "folders": [
-          "layouts",
-          "pages"
-        ]
-      },
-      "sass": {
-        "default": "assets"
-      }
-    }
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",
@@ -36,7 +16,7 @@
     "url": "https://github.com/Rudchyk/create-module-helper/issues"
   },
   "homepage": "https://github.com/Rudchyk/create-module-helper#readme",
-  "devDependencies": {
+  "dependencies": {
     "readline-sync": "^1.4.10"
   }
 }
