@@ -2,8 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const { log, logColor, logMsg } = require('./log');
 
-
-
 module.exports = data => {
     const {
         tplsFolder,
@@ -30,17 +28,15 @@ module.exports = data => {
     }
     let customerTpls = getListOfTheTemplates('.');
     let defaultTpls = getListOfTheTemplates();
-    if(customerTpls) {
-        defaultTpls.items = defaultTpls.items.filter((item, index) => {
-            return customerTpls.items.indexOf(item) !== index;
-        });
-    }
     const createTplsPath = (tpls) => {
         return tpls.items.map(item => path.resolve(tpls.path, item));
     }
-    customerTpls = createTplsPath(customerTpls);
+    if(customerTpls) {
+        defaultTpls.items = defaultTpls.items.filter((item, index) => !customerTpls.items.find(el => el === item));
+        customerTpls = createTplsPath(customerTpls);
+    }
     defaultTpls = createTplsPath(defaultTpls);
-    const existedTpls = [...customerTpls, ...defaultTpls];
+    const existedTpls = [...(customerTpls || []), ...defaultTpls];
     const getInfoFromPath = (path, query) => {
         const data = path.split('\\');
         const file = data.pop();
@@ -59,7 +55,7 @@ module.exports = data => {
         const suggestedTpls = existedTpls.reduce((accumulator, file) => {
             return `${accumulator}${accumulator ? '\n' : ''}${getInfoFromPath(file)} (${file})`;
         }, '');
-        log(`Template with ${tpl} doesn't exist.${logMsg(`Please use:\n${logColor(suggestedTpls)}`)}\nor create new template: ./tpls/${tpl}.{js|sass|vue}`);
+        log(`Template with ${tpl} doesn't exist.${logMsg(`Please use:\n${logColor(suggestedTpls)}`)}\nor create new template: ./${tplsFolder}/${tpl}.{js|sass|vue}`);
         process.exit();
     }
     return {

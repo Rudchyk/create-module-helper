@@ -36,15 +36,7 @@ fs.writeFileSync(
         }
     }
 );
-const tplMsg = options.tpls[tpl].msg || '';
 log(`File: ${logColor(newFileName)} (${newFile}) was successfully created.`, 's');
-log(`Please use:\n===\n${prepareContent(tplMsg)}\n====`, 'i');
-
-
-
-
-
-
-
-
-
+if(options.tpls[tpl] && options.tpls[tpl].msg) {
+    log(`Please use:\n===\n${prepareContent(options.tpls[tpl].msg)}\n====`, 'i');
+}
